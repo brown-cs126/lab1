@@ -1,0 +1,7 @@
+(test
+ (name code)
+ (modules code)
+ (libraries ounit2)
+ (action
+  (run ./code.exe -display false -ci true)))
+
