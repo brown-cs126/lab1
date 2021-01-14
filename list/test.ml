@@ -24,7 +24,7 @@ let test_match =
                     (not (starting_with_brown [])) );
                 ( "" >:: fun _ ->
                   assert_bool
-                    "[ \"panda\" ] is starting with \"brown\""
+                    "[ \"panda\" ] is not starting with \"brown\""
                     (starting_with_brown [ "panda" ]) );
                 ( "" >:: fun _ ->
                   assert_bool
@@ -32,7 +32,7 @@ let test_match =
                     (starting_with_brown [ "brown"; "bear" ]) );
                 ( "" >:: fun _ ->
                   assert_bool
-                    "[ \"polar\"; \"bear\" ] is starting with \"brown\""
+                    "[ \"polar\"; \"bear\" ] is not starting with \"brown\""
                     (not (starting_with_brown [ "polar"; "bear" ])) );
               ];
          "two_or_four"
