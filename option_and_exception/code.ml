@@ -6,8 +6,10 @@
     https://www.cs.cornell.edu/courses/cs3110/2019sp/textbook/data/exceptions.html *)
 
 let rec list_max = function
-  | [] -> raise (Failure "todo")
-  | h :: t -> max h (list_max t)
+  | [] ->
+      raise (Failure "todo")
+  | h :: t ->
+      max h (list_max t)
 
 (* 
 There are a couple possibilities to consider:
@@ -27,22 +29,43 @@ let _ = assert (extract (Some 42) = "42")
 
 let _ = assert (extract None = "")
 
+(* Exercise: matching [✭]
+
+For each pattern in the list below, give a value of type [int option list] that does not match the pattern and is not the empty list and explain why that's impossible. *)
+
+(* (Some x)::tl *)
+let l1 = []
+
+(* [Some 1260; None] *)
+let l2 = []
+
+(* [Some x; _] *)
+let l3 = []
+
+(* h1::h2::tl *)
+let l4 = []
+
+(* h :: tl *)
+let l5 = []
+
 let rec list_max_opt = function
-  | [] -> None
+  | [] ->
+      None
   | h :: t -> (
-      match list_max_opt t with None -> Some h | Some m -> Some (max h m) )
+    match list_max_opt t with None -> Some h | Some m -> Some (max h m) )
 
 exception Max_undefined
 
 let rec list_max_exn = function
-  | [] -> raise Max_undefined
+  | [] ->
+      raise Max_undefined
   | h :: t -> (
-      match list_max_exn t with m -> max h m | exception Max_undefined -> h )
+    match list_max_exn t with m -> max h m | exception Max_undefined -> h )
 
 (* Exceptions are convenient when they are truely exceptional. For example,
 when you know [list_max] is only applied to non-empty lists. *)
 
-let (_ : int list) = List.map list_max_exn [ [ 1; 2; 3 ]; [ 42 ]; [ 4; 5 ] ]
+let (_ : int list) = List.map list_max_exn [[1; 2; 3]; [42]; [4; 5]]
 
 (* Exceptions forget all computation between the raise and the nearest catching [match].
  This behavior is sometimes useful. *)
@@ -50,9 +73,12 @@ let (_ : int list) = List.map list_max_exn [ [ 1; 2; 3 ]; [ 42 ]; [ 4; 5 ] ]
 exception Found_zero
 
 let rec product_helper = function
-  | [] -> 1
-  | 0 :: _ -> raise Found_zero
-  | n :: ns -> n * product_helper ns
+  | [] ->
+      1
+  | 0 :: _ ->
+      raise Found_zero
+  | n :: ns ->
+      n * product_helper ns
 
 (* 
 product_helper [1; 2; 0; 3]
@@ -68,14 +94,15 @@ let product ns =
 (* But this behavior might stop your code unexpectedly. *)
 
 let _ =
-  match List.map list_max_exn [ []; [ 1; 2; 3 ]; [ 42 ]; [ 4; 5 ] ] with
-  | _ -> ()
-  | exception Max_undefined -> ignore "Bad thing happened"
+  match List.map list_max_exn [[]; [1; 2; 3]; [42]; [4; 5]] with
+  | _ ->
+      ()
+  | exception Max_undefined ->
+      ignore "Bad thing happened"
 
-let (_ : int option list) =
-  List.map list_max_opt [ []; [ 1; 2; 3 ]; [ 42 ]; [ 4; 5 ] ]
+let (_ : int option list) = List.map list_max_opt [[]; [1; 2; 3]; [42]; [4; 5]]
 
-(* In general, [option]s are safer to use because they remind us that there is a special case. *)
+(* Usually [option]s are safer to use because they remind us that there is a special case. *)
 
 (* Exercise: date before [✭✭]
 
@@ -83,17 +110,12 @@ Define a date-like triple to be a value of type [int*int*int]. Examples of date-
 Write a function is_before that takes two dates as input and evaluates to true or false. It evaluates to true if the first argument is a date that comes before the second argument. (If the two dates are the same, the result is false.)
 Your function needs to work correctly only for dates, not for arbitrary date-like triples. However, you will probably find it easier to write your solution if you think about making it work for arbitrary date-like triples. For example, it's easier to forget about whether the input is truly a date, and simply write a function that claims (for example) that January 100, 2013 comes before February 34, 2013—because any date in January comes before any date in February, but a function that says that January 100, 2013 comes after February 34, 2013 is also valid. You may ignore leap years. *)
 
+type date = int * int * int
+
+let is_before : date -> date -> bool = fun _ _ -> raise (Failure "TODO")
+
 (* Exercise: earliest date [✭✭✭] 
 
 Write a function [earliest : (int*int*int) list -> (int*int*int) option]. It evaluates to [None] if the input list is empty, and to [Some d] if date d is the earliest date in the list. Hint: use is_before. *)
 
-(* Exercise: matching [✭]
-
-For each pattern in the list below, give a value of type [int option list] that does not match the pattern and is not the empty list, or explain why that's impossible.
-
-    (Some x)::tl
-    [Some 3110; None]
-    [Some x; _]
-    h1::h2::tl
-    h :: tl
- *)
+let rec earliest_date : date list -> date option = function _ -> raise (Failure "TODO")

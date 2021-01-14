@@ -33,7 +33,7 @@ The function body is the actual program that we want to test. *)
 let test_head =
   "head"
   >::: [
-         ( "empty" >:: fun _ -> assert_raises Not_found (fun _ -> head []) );
+         ("empty" >:: fun _ -> assert_raises Not_found (fun _ -> head []));
          ( "test1" >:: fun _ ->
            assert_equal ~printer:string_of_int 42 (head [ 42 ]) );
          ( "test2" >:: fun _ ->

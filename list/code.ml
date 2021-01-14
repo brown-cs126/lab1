@@ -28,27 +28,59 @@ let l2 : int list = []
 (* Exercise: construct the same list again. This time, the following expression must appear in your answer: [2;3;4]. Use the @ operator, and do not use ::. *)
 let l3 : int list = []
 
+(* When you are ready, [cd] to [lab0/list] and run [dune test] *)
+
 (* We have seen how to construct lists. It is time to destruct them! *)
 
 (* [match] performs a case analysis on lists. The two cases correspond to two list constructors ([[]] and [(::)]). *)
-let is_list1_empty : bool = match list1 with
-    | [] -> true
-    | _ :: _ -> false
 
-let is_list2_empty : bool = match list2 with
-    | [] -> true
-    | _ :: _ -> false
+let empty lst = 
+  match lst with
+  | [] -> true
+  | _ :: _ -> false
 
-let _ = assert is_list1_empty
-let _ = assert (not is_list2_empty)
+let _ = assert (empty [])
+let _ = assert (not (empty [2; 3]))
 
-let first_of_list3 : string = match list3 with
-    | [] -> ""
-    | e :: _ -> e
+let head lst = 
+  match lst with
+  | [] -> raise (Failure "lst is empty")
+  | h :: _ -> h
 
-let rest_of_list3 : string list = match list3 with
-    | [] -> []
-    | _ :: es -> es
+let tail lst = 
+  match lst with
+  | [] -> raise (Failure "lst is empty")
+  | _ :: t -> t
 
-let _ = assert (first_of_list3 = "Welcome")
-let _ = assert (rest_of_list3 = [ "to"; "CS1260" ])
+let _ = assert (head ["a"; "b"; "c"] = "a")
+let _ = assert (tail ["a"; "b"; "c"] = ["b"; "c"])
+
+(* OCaml's pattern matching system is very powerful and intuitive. *)
+let the_second_is_zero lst =
+    match lst with
+    | _ :: 0 :: _ -> true
+    | _ -> false
+
+let contains_three lst =
+    match lst with
+    | [_; _; _] -> true
+    | _ -> false
+
+(* Exercise: patterns [✭✭✭]
+
+Using pattern matching, write three functions, one for each of the following properties. Your functions should return true if the input list has the property and false otherwise.
+    the list's first element is "brown"
+    the list has exactly two or four elements; do not use the length function
+    the first two elements of the list are equal *)
+
+let starting_with_brown lst =
+    match lst with
+    | _ -> false
+let two_or_four lst =
+    match lst with
+    | _ -> false
+let first_two_equal lst =
+    match lst with
+    | _ -> false
+
+(* We will write more list functions in the next section. *)

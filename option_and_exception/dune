@@ -1,7 +1,7 @@
 (test
- (name code)
- (modules code)
+ (name test)
+ (modules test code)
  (libraries ounit2)
  (action
-  (run ./code.exe -display false -ci true)))
+  (run ./test.exe -display false -ci true)))
 

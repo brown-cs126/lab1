@@ -34,8 +34,6 @@ let _ =
 
 let _ = match (1, 2, 3) with x, y, z -> x + y + z
 
-(* read https://www.cs.cornell.edu/courses/cs3110/2019sp/textbook/data/tuples.html *)
-
 (* Tuples are most frequently used in data type definition ([type]), for example: *)
 
 type 'a mylist = Empty | ( :: ) of 'a * 'a mylist
