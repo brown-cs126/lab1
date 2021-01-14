@@ -1,7 +1,7 @@
 ## Create and Use Lists
 
 This module is intended to give you more experience in working with lists.
-You are expected test your implementations. 
+You are expected to test your implementations. 
 
 For this module you will complete the following exercises:
 
