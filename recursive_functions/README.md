@@ -15,6 +15,16 @@ Exercise: Sum Tail Recursive [✭]
 
 Try implementing the same function using tail recursion 
 
+Exercise: takeWhile [✭]
+
+Define the function `takeWhile` that takes in a list of integers, a predicate function `f` and collects the elements until an element that doesn't satify the predicate is reached
+
+For example given `[1, 2, 3 , 4, 5, 3, 2]` and f `fun a -> a < 4`, this function would return `[1, 2, 3]`
+
+Exercise: Sum Tail Recursive [✭]
+
+Try implementing the same function using tail recursion 
+
 Exercise: fib fast [✭✭✭]
 
 How quickly does your implementation of fib compute the 50th Fibonacci number? If it computes nearly instantaneously, congratulations! But the recursive solution most people come up with at first will seem to hang indefinitely. The problem is that the obvious solution computes subproblems repeatedly. For example, computing fib 5 requires computing both fib 3 and fib 4, and if those are computed separately, a lot of work (an exponential amount, in fact) is being redone.

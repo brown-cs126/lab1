@@ -5,7 +5,7 @@ You are expected test your implementations.
 
 For this module you will complete the following exercises:
 
-(Exercises are borrowed from Functional Programming in OCaml (Spring 2019 Edition))
+(Some exercises are borrowed from Functional Programming in OCaml (Spring 2019 Edition))
 
 Exercise: Languages [✭]
 

@@ -95,18 +95,6 @@ Give OCaml expressions that have the following types:
     student -> string * string (a function that extracts the student's name)
     string -> string -> float -> student (a function that creates a student record)
 
-Here is a variant that represents a few Pokémon types:
-
-type poketype = Normal | Fire | Water
-
-Exercise: pokerecord [✭✭]
-
-    Define the type pokemon to be a record with fields name (a string), hp (an integer), and ptype (a poketype).
-
-    Create a record named charizard of type pokemon that represents a Pokémon with 78 HP and Fire type.
-
-    Create a record named metapod of type pokemon that represents a Pokémon with 50 HP and Normal type.
-
 Exercise: date before [✭✭]
 
 Define a date-like triple to be a value of type int\*int\*int. Examples of date-like triples include (2013, 2, 1) and (0,0,1000). A date is a date-like triple whose first part is a positive year (i.e., a year in the common era), second part is a month between 1 and 12, and third part is a day between 1 and 31 (or 30, 29, or 28, depending on the month and year). (2013, 2, 1) is a date; (0,0,1000) is not.

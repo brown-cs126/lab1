@@ -4,6 +4,8 @@ let rec sum : int = 0
 (* Exercise: Sum Tail Recursive *)
 let rec sum_tail : int = 0
 
+(* Exercise: takeWhile*)
+
 (*Exercise: Fib Fast*)
 let rec fib_fast : int = 0
 
