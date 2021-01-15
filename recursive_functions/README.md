@@ -7,10 +7,11 @@ For this module you will complete the following exercises:
 
 (Exercises are borrowed from Functional Programming in OCaml (Spring 2019 Edition))
 
-Exercise: Sum [✭]
+### Exercise: Sum [✭]
 
-Define the function `sum` that takes in a list of integers and returns the sum 
+Define the function `sum` that takes in a list of integers and returns the sum
 
+<<<<<<< HEAD
 Exercise: Sum Tail Recursive [✭]
 
 Try implementing the same function using tail recursion 
@@ -26,6 +27,9 @@ Exercise: Sum Tail Recursive [✭]
 Try implementing the same function using tail recursion 
 
 Exercise: fib fast [✭✭✭]
+=======
+### Exercise: fib fast [✭✭✭]
+>>>>>>> ec300087c5a19456621b7190a75d359f3ac71029
 
 How quickly does your implementation of fib compute the 50th Fibonacci number? If it computes nearly instantaneously, congratulations! But the recursive solution most people come up with at first will seem to hang indefinitely. The problem is that the obvious solution computes subproblems repeatedly. For example, computing fib 5 requires computing both fib 3 and fib 4, and if those are computed separately, a lot of work (an exponential amount, in fact) is being redone.
 
@@ -39,7 +43,7 @@ The idea of h is that it assumes the previous two Fibonacci numbers were pp and 
 
 What is the first value of n for which fib_fast n is negative, indicating that integer overflow occurred?
 
-Exercise: Function Associativity [✭✭]
+### Exercise: Function Associativity [✭✭]
 
 Which of the following produces an integer, which produces a function, and which produces an error? Decide on an answer, then check your answer in the toplevel.
 
