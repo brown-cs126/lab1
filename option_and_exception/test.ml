@@ -1,5 +1,5 @@
 open OUnit2
-open Code
+open Exercises
 
 let m1 = function Some _ :: _ -> true | _ -> false
 
