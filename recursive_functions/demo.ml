@@ -1,5 +1,3 @@
-(* Functions to be implemented during lecture section, collabratively with the students *)
-
 let rec length (l: int list) : int = match l with 
   | [] -> 0
   | x :: xs -> 1 + length xs 
