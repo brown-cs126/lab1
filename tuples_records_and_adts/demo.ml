@@ -1,11 +1,12 @@
-(* Functions to be implemented during lecture section, collabratively with the students *)
-
+(** We Define the following variants for pokemon types *)
 type ptype = TNormal | TFire | TWater
 
+(* A Record representing a pokemon *)
 type mon = { name : string; hp : int; ptype : ptype }
 
 let c = { name = "Charmander"; hp = 39; ptype = TFire }
 
+(* Deconstructing records using pattern matching *)
 let rec poke_names_recur (acc : string list) = function
   | [] -> acc
   | p :: rest -> (

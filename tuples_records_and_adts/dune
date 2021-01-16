@@ -1,6 +1,6 @@
 (executable
  (name test)
- (modules test exercises)
+ (modules test demo exercises)
  (libraries ounit2))
 
 (rule
