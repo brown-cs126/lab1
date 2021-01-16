@@ -19,19 +19,7 @@ let _ = assert ([ 2; 3 ] = [ 2 ] @ [] @ [ 3 ])
 
 (* The assert function ensures that the two lists are the same [(=)]. *)
 
-(* Exercise: construct a list that has the integers 1 through 5 in it. Use the square bracket notation for lists. *)
-let l1 : int list = []
-
-(* Exercise: construct the same list, but do not use the square bracket notation. Instead use :: and []. *)
-let l2 : int list = []
-
-(* Exercise: construct the same list again. This time, the following expression must appear in your answer: [2;3;4]. Use the @ operator, and do not use ::. *)
-let l3 : int list = []
-
-(* When you are ready, [cd] to [lab0/list] and run [dune test] *)
-
 (* We have seen how to construct lists. It is time to destruct them! *)
-
 (* [match] performs a case analysis on lists. The two cases correspond to two list constructors ([[]] and [(::)]). *)
 
 let empty lst = 
@@ -65,22 +53,3 @@ let contains_three lst =
     match lst with
     | [_; _; _] -> true
     | _ -> false
-
-(* Exercise: patterns [✭✭✭]
-
-Using pattern matching, write three functions, one for each of the following properties. Your functions should return true if the input list has the property and false otherwise.
-    the list's first element is "brown"
-    the list has exactly two or four elements; do not use the length function
-    the first two elements of the list are equal *)
-
-let starting_with_brown lst =
-    match lst with
-    | _ -> false
-let two_or_four lst =
-    match lst with
-    | _ -> false
-let first_two_equal lst =
-    match lst with
-    | _ -> false
-
-(* We will write more list functions in the next section. *)
