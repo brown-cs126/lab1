@@ -1,4 +1,4 @@
-# lab0
+# Lab 1
 
 This lab covers the following topics and is meant to help you familiarize yourself with the OCaml language and its various features you are expected utilize throughout the semester. Each module has a `demo.ml` file that you can follow along during the lecture part of the lab and an `exercises.ml` file that you are expected to implement. For the most part, we provide some basic test cases for you to test your code but you should think of further edge cases and test your code accordingly.
 
