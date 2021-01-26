@@ -2,6 +2,8 @@
 let l1 : int list = []
 
 (* Exercise: construct the same list, but do not use the square bracket notation. Instead use :: and []. *)
+(* Note that ocamlformat may rewrite this expression to use the square bracket notation. That is acceptable and won't prevent you from getting checked off. 
+  This exercise is to get familiar with this notation which you will utilize to deconstruct lists in the later modules *) 
 let l2 : int list = []
 
 (* Exercise: construct the same list again. This time, the following expression must appear in your answer: [2;3;4]. Use the @ operator, and do not use ::. *)
