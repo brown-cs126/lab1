@@ -8,7 +8,7 @@ For this module you will complete the following exercises:
 
 ### Exercise: matching [✭]
 
-For each pattern in the list below, give a value of type `int option list` that does not match the pattern and is not the empty list and explain why that's impossible.
+For each pattern in the list below, give a value of type int option list that does not match the pattern and is not the empty list, or explain why that's impossible.
 
 - `(Some x)::tl`
 - `[Some 1260; None]`
