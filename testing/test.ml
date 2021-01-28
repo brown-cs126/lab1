@@ -15,9 +15,8 @@ let head : 'a list -> 'a = function [] -> raise Not_found | x :: _ -> x
 
 (* The expected answer in test2 should be 0. But we put 42 there.
 The OUnit2 logging says nothing about 0 or 42 but simply [Failure: not equal].
-We can improve the logging by telling [assert_equal] does not know how to print
-the expected answer and the real answer. Try running the test again with the 
-improved test suite.
+We can improve the logging by telling [assert_equal] how to print 0 and 42.
+Try running the test again with the improved test suite.
  *)
 
 (* let suite = "Test head" >::: [
