@@ -4,7 +4,7 @@ let rec length (l: int list) : int = match l with
 
 let rec length_tail (l: int list) (acc: int) : int = match l with
   | [] -> acc
-  | x :: xs -> length xs (acc + 1)
+  | x :: xs -> length_tail xs (acc + 1)
 
 let rec even n =
   match n with

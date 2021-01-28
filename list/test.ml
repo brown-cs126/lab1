@@ -25,7 +25,7 @@ let test_match =
                 ( "" >:: fun _ ->
                   assert_bool
                     "[ \"panda\" ] is not starting with \"brown\""
-                    (starting_with_brown [ "panda" ]) );
+                    (not (starting_with_brown [ "panda" ])) );
                 ( "" >:: fun _ ->
                   assert_bool
                     "[ \"brown\"; \"bear\" ] is starting with \"brown\""
