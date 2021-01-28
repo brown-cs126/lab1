@@ -16,13 +16,13 @@ let test_fold =
     "test power of fold"
     >::: [
       ("length" >:: fun _ -> assert_equal
-        (length [1, 2, 3]) 3);
+        (length [1; 2; 3]) 3);
       ("map" >:: fun _ -> assert_int_list_equal 
-       (map (fun x -> x + 1) [1, 2, 3]) [2, 3, 4] );
+       (map (fun x -> x + 1) [1; 2; 3]) [2; 3; 4] );
       ("reverse" >:: fun _ -> assert_int_list_equal
-       (rev [1, 2, 3]) [3, 2, 1]);
+       (rev [1; 2; 3]) [3; 2; 1]);
       ("filter" >:: fun _ -> assert_int_list_equal 
-        (filter (fun x -> x < 3) [1, 2, 3, 4]) [1, 2]);
+        (filter (fun x -> x < 3) [1; 2; 3; 4]) [1; 2]);
     ]
 
 let suite = "suite" >::: [ test_compose; test_fold]
