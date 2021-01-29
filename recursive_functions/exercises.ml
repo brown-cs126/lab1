@@ -1,16 +1,16 @@
-let todo = failwith "unimplemented"
+let todo () = failwith "unimplemented"
 
 (* Exercise: Sum *)
-let rec sum : int = todo
+let rec sum : int = todo ()
 
 (* Exercise: Sum Tail Recursive *)
-let rec sum_tail : int = todo
+let rec sum_tail : int = todo ()
 
 (* Exercise: takeWhile*)
-let rec takeWhile  = todo
+let rec takeWhile  = todo ()
 
 (*Exercise: Fib Fast*)
-let rec fib_fast : int = todo
+let rec fib_fast : int = todo ()
 
 (*Exercise: Function Associativity *)
 let add (a: int) (b: int) : int = a + b

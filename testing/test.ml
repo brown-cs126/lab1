@@ -29,7 +29,7 @@ not cover this case. [OUnit2] provides [assert_raises] for this purpose.
 The second argument to [assert_raises] must be a function from [unit].
 The function body is the actual program that we want to test. *)
 
-let test_head =
+let suite =
   "head"
   >::: [
          ("empty" >:: fun _ -> assert_raises Not_found (fun _ -> head []));
@@ -60,4 +60,4 @@ let rec index_of : 'a -> 'a list -> int =
 
 let test_index_of = "index_of" >::: []
 
-let () = run_test_tt_main ("test" >::: [ test_head; test_index_of ])
+let () = run_test_tt_main (test_index_of)
